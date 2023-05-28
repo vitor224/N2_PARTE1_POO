@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Contato</title>
+</head>
+<body>
+<h1>Adicionar Contato</h1>
+<form action="/add" method="post">
+  <label for="name">Nome:</label>
+  <input type="text" id="name" name="name" required><br>
+  <label for="phoneNumber">Número de Telefone:</label>
+  <input type="text" id="phoneNumber" name="phoneNumber" required><br>
+  <input type="submit" value="Salvar">
+</form>
+</body>
+</html>

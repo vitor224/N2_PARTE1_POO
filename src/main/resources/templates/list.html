@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Contatos</title>
+</head>
+<body>
+<h1>Lista de Contatos</h1>
+<form action="/search" method="get">
+  <label for="searchName">Buscar Contato:</label>
+  <input type="text" id="searchName" name="name" required>
+  <input type="submit" value="Buscar">
+</form>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Número de Telefone</th>
+  </tr>
+  <tr th:each="contact : ${contacts}">
+    <td th:text="${contact.name}"></td>
+    <td th:text="${contact.phoneNumber}"></td>
+    <td><a th:href="@{/delete/{name}(name=${contact.name})}">Deletar</a></td>
+  </tr>
+
+</table>
+<a href="/add">Adicionar Contato</a>
+
+</body>
+</html>
